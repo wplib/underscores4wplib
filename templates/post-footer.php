@@ -8,7 +8,7 @@ $theme = Underscores::instance();
 
 if ( $entity->is_blog_post() ) :
 
-	if ( $theme->has_categories_in_use() ) {
+	if ( $theme->has_categories() ) {
 
 		$entity->the_category_list_links_html();
 
