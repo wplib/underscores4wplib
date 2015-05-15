@@ -13,11 +13,11 @@
 
 		<div class="entry-meta">
 
-			<?php $entity->the_template( 'posted-on' ) ?>
+			<?php $entity->the_template( 'post-posted-on' ) ?>
 
-		</div><!-- .entry-meta -->
+		</div>
 
-	</header><!-- .entry-header -->
+	</header>
 
 	<div class="entry-content">
 	<?php
@@ -27,13 +27,13 @@
 		$entity->the_multipage_links_html();
 
 	?>
-	</div><!-- .entry-content -->
+	</div>
 
 	<footer class="entry-footer">
 
 		<?php $entity->the_template( 'post-footer' ); ?>
 
-	</footer><!-- .entry-footer -->
+	</footer>
 
 
-</article><!-- #post-## -->
+</article>

@@ -15,7 +15,7 @@ $theme->the_header_html(); ?>
 		<section class="error-404 not-found">
 			<header class="page-header">
 				<h1 class="page-title">
-					<?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'wplib' ); ?>
+					<?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'underscores4wplib' ); ?>
 				</h1>
 			</header><!-- .page-header -->
 
@@ -23,33 +23,33 @@ $theme->the_header_html(); ?>
 				<p>
 					<?php
 					esc_html_e( 'It looks like nothing was found at this location.' .
-					            'Maybe try one of the links below or a search?', 'wplib' );
+					            'Maybe try one of the links below or a search?', 'underscores4wplib' );
 					?>
 				</p>
 				<?php
 
-					$theme->the_search_form();
+					$theme->the_search_form_html();
 
-					$theme->the_widget( 'WP_Widget_Recent_Posts' );
+					$theme->the_widget_html( 'WP_Widget_Recent_Posts' );
 
 					if ( 1 < $theme->category_count() ) :
 
-						$theme->the_template( 'most-used-categories' );
+						$theme->the_template( 'widget-most-used-categories' );
 
 					endif;
 
 					/* translators: %1$s: smiley */
-					$theme->the_widget( 'WP_Widget_Archives', array(
+					$theme->the_widget_html( 'WP_Widget_Archives', array(
 
 						'instance'      => 'dropdown=1',
 						'after_title'   => '</h2><p>' . sprintf(
-							esc_html__( 'Try looking in the monthly archives. %1$s', 'wplib' ),
-							$theme->get_converted_smilies( ':)' )
+							esc_html__( 'Try looking in the monthly archives. %1$s', 'underscores4wplib' ),
+							$theme->get_converted_smilies_html( ':)' )
 						) . '</p>',
 
 	                ));
 
-					$theme->the_widget( 'WP_Widget_Tag_Cloud' );
+					$theme->the_widget_html( 'WP_Widget_Tag_Cloud' );
 
 				?>
 			</div><!-- .page-content -->

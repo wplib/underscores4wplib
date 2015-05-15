@@ -24,7 +24,7 @@ $theme->the_header_html(); ?>
 
 		else :
 
-			foreach( $theme->get_post_entity_list() as $entry ) :
+			foreach( $theme->get_post_list() as $entry ) :
 
 				/* Include the Post-Format-specific template for the content.
 				 * If you want to override this in a child theme, then include a file
@@ -39,8 +39,8 @@ $theme->the_header_html(); ?>
 		endif;
 
 	?>
-	</main><!-- #main -->
-</div><!-- #primary -->
+	</main>
+</div>
 
 <?php
 $theme->the_sidebar_html();

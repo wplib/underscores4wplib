@@ -9,6 +9,7 @@
 		<?php
 
 			$entity->the_previous_post_link();
+
 			$entity->the_next_post_link();
 
 		?>

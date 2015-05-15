@@ -46,7 +46,7 @@ function wplib_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'primary' => esc_html__( 'Primary Menu', 'wplib' ),
+		'primary' => esc_html__( 'Primary Menu', 'underscores4wplib' ),
 	) );
 
 	/*
@@ -93,7 +93,7 @@ add_action( 'after_setup_theme', 'wplib_content_width', 0 );
  */
 function wplib_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'wplib' ),
+		'name'          => esc_html__( 'Sidebar', 'underscores4wplib' ),
 		'id'            => 'sidebar-1',
 		'description'   => '',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',

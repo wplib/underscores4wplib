@@ -22,7 +22,7 @@ $theme->the_header_html(); ?>
 
 		else:
 
-			foreach( $theme->get_post_entity_list() as $entry ) :
+			foreach( $theme->get_post_list() as $entry ) :
 
 				/**
 				 * Run the loop for the search to output the results.

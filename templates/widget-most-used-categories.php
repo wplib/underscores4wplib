@@ -10,7 +10,7 @@
 <div class="widget widget_categories">
 	<h2 class="widget-title">
 	<?php
-		esc_html_e( 'Most Used Categories', 'wplib' );
+		esc_html_e( 'Most Used Categories', 'underscores4wplib' );
 	?>
 	</h2>
 	<ul>
