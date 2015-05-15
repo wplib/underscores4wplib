@@ -12,7 +12,7 @@ $theme->the_header_html(); ?>
 <section id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 		<header class="page-header">
-			<h1 class="page-title"><?php $theme->the_labeled_search_query(); ?></h1>
+			<h1 class="page-title"><?php $theme->the_labeled_search_query_html(); ?></h1>
 		</header><!-- .page-header -->
 		<?php
 

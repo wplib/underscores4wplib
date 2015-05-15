@@ -46,6 +46,3 @@ $theme->the_header_html(); ?>
 $theme->the_sidebar_html();
 $theme->the_footer_html();
 
-
-?>
-
