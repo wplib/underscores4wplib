@@ -11,7 +11,7 @@ if ( $theme->is_sidebar_active( 'sidebar-1' ) ) :
 	?>
 	<div id="secondary" class="widget-area" role="complementary">
 
-		<?php $this->the_widget_area_html( 'sidebar-1' ); ?>
+		<?php $theme->the_widget_area_html( 'sidebar-1' ); ?>
 
 	</div>
 	<?php
