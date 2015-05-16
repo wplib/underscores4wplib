@@ -6,75 +6,53 @@
  * and the comment form.
  *
  * @package underscores4wplib
+ *
+ *
  */
+$entity = WPLib::theme()->entity();
 
-/*
- * If the current post is protected by a password and
- * the visitor has not yet entered the password we will
- * return early without loading the comments.
- */
-if ( post_password_required() ) {
-	return;
-}
-?>
+if ( $entity->user_can_see_comments() ) :
 
-<div id="comments" class="comments-area">
 
-	<?php // You can start editing here -- including this comment! ?>
+	echo '<div id="comments" class="comments-area">';
 
-	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title">
-			<?php
-				printf( // WPCS: XSS OK
-					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'underscores4wplib' ) ),
-					number_format_i18n( get_comments_number() ),
-					'<span>' . get_the_title() . '</span>'
-				);
-			?>
-		</h2>
+	if ( $entity->has_comments() ) :
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'underscores4wplib' ); ?></h2>
-			<div class="nav-links">
+		echo '<h2 class="comments-title">';
 
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'underscores4wplib' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'underscores4wplib' ) ); ?></div>
+			$message = esc_html( _nx(
+				'One thought on &ldquo;%2$s&rdquo;',   // Single
+				'%1$s thoughts on &ldquo;%2$s&rdquo;', // Plural
+				$entity->number_of_comments(),         // # comments
+				'comments title',                      // Context
+				'underscores4wplib'                    // Domain
+			));
+			printf( $message, $entity->get_number_of_comments_html(), "<span>{$entity->title}</span>" );
 
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-above -->
-		<?php endif; // check for comment navigation ?>
+		echo '</h2>';
 
-		<ol class="comment-list">
-			<?php
-				wp_list_comments( array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				) );
-			?>
-		</ol><!-- .comment-list -->
+		$entity->the_template( 'post-comment-links', 'location=above' );
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
-		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'underscores4wplib' ); ?></h2>
-			<div class="nav-links">
+		echo '<ol class="comment-list">';
 
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'underscores4wplib' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'underscores4wplib' ) ); ?></div>
+			$entity->the_comment_list_html( 'style=ol&short_ping=1' );
 
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-below -->
-		<?php endif; // check for comment navigation ?>
+		echo '</ol>';
 
-	<?php endif; // have_comments() ?>
+		$entity->the_template( 'post-comment-links', 'location=below' );
 
-	<?php
-		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
-	?>
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'underscores4wplib' ); ?></p>
-	<?php endif; ?>
+	endif;
 
-	<?php comment_form(); ?>
+	if ( $entity->comments_unavailable() ) :
 
-</div><!-- #comments -->
+		echo '<p class="no-comments">';
+		esc_html_e( 'Comments are closed.', 'underscores4wplib' );
+		echo '</p>';
+
+	endif;
+
+	$entity->the_comment_form_html();
+
+	echo '</div>';
+
+endif;

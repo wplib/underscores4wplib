@@ -24,7 +24,7 @@ $theme->the_header_html(); ?>
 
 		endif;
 
-		if ( $theme->user_can_see_comments( $post ) ) :
+		if ( $post->user_can_see_comments() ) :
 
 			$post->the_comments_html();
 

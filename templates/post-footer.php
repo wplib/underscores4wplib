@@ -4,7 +4,7 @@
  *
  * @var WPLib_Post $entity
  */
-$theme = Underscores::instance();
+$theme = WPLib::theme();
 
 if ( $entity->is_blog_post() ) :
 
@@ -18,7 +18,7 @@ if ( $entity->is_blog_post() ) :
 
 endif;
 
-if ( $theme->user_can_see_comments( $entity ) ):
+if ( $entity->user_can_see_comments() ):
 
 	?>
 	<span class="comments-link">
