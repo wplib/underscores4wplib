@@ -13,20 +13,20 @@ $theme->the_header_html(); ?>
 	<main id="main" class="site-main" role="main">
 		<?php
 
-		$post = $theme->post_entity();
+		$entity = $theme->post_entity();
 
-		$post->the_template( 'content-single' );
-		$post->the_edit_link();
+		$entity->the_template( 'content-single' );
+		$entity->the_edit_link();
 
-		if ( $post->has_adjacent_posts() ):
+		if ( $entity->has_adjacent_posts() ):
 
-			$post->the_template( 'post-navigation' );
+			$entity->the_template( 'post-navigation' );
 
 		endif;
 
-		if ( $post->user_can_see_comments() ) :
+		if ( $entity->user_can_see_comments() ) :
 
-			$post->the_comments_html();
+			$entity->the_comments_html();
 
 		endif;
 

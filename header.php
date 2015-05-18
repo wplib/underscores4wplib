@@ -38,7 +38,7 @@
 
 				<h1 class="site-title"><?php $theme->the_site_name_link(); ?></h1>
 
-				<h2 class="site-description"><?php $theme->the_site_description(); ?></h2>
+				<h2 class="site-description"><?php $theme->the_site_description_html(); ?></h2>
 
 			</div>
 

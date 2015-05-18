@@ -22,7 +22,7 @@ $theme->the_header_html(); ?>
 
 			$page->the_template( 'content', 'page' );
 
-			if ( $theme->user_can_see_comments( $page ) ) :
+			if ( $page->user_can_see_comments() ) :
 
 				$page->the_template( 'comments' );
 
