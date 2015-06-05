@@ -18,7 +18,7 @@ $theme->the_header_html(); ?>
 	<main id="main" class="site-main" role="main">
 		<?php
 
-			$page = $theme->page_entity();
+			$page = $theme->page_item();
 
 			$page->the_template( 'content', 'page' );
 

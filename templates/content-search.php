@@ -6,19 +6,19 @@
  *
  * @package underscores4wplib
  *
- * @var WPLib_Post $entity
+ * @var WPLib_Post $item
  */
 ?>
 
-<article id="post-<?php $entity->the_ID(); ?>" class="<?php $entity->the_css_classes_attr(); ?>">
+<article id="post-<?php $item->the_ID(); ?>" class="<?php $item->the_css_classes_attr(); ?>">
 
 	<header class="entry-header">
-		<h1 class="entry-title"><? $entity->the_title_link( 'rel=bookmark' ); ?></h1>
+		<h1 class="entry-title"><? $item->the_title_link( 'rel=bookmark' ); ?></h1>
 		<?php
-			if ( $entity->is_blog_post() ) :
+			if ( $item->is_blog_post() ) :
 			?>
 				<div class="entry-meta">
-					<?php $entity->the_template( 'post-posted-on' ); ?>
+					<?php $item->the_template( 'post-posted-on' ); ?>
 				</div>
 			<?php
 			endif;
@@ -27,13 +27,13 @@
 
 	<div class="entry-summary">
 
-		<?php $entity->the_excerpt_html(); ?>
+		<?php $item->the_excerpt_html(); ?>
 
 	</div>
 
 	<footer class="entry-footer">
 
-		<?php $entity->the_template( 'post-footer' ); ?>
+		<?php $item->the_template( 'post-footer' ); ?>
 
 	</footer>
 </article>

@@ -1,6 +1,6 @@
 <?php
 /**
- * The template part for when no posts are found in a post entity list.
+ * The template part for when no posts are found in a post item list.
  *
  * @package underscores4wplib
  *

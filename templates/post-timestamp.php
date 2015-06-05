@@ -1,14 +1,14 @@
 <?php
 /**
- * @var WPLib_Post $entity
+ * @var WPLib_Post $item
  */
 ?>
-<time class="entry-date published <?php $entity->the_not( 'is_modified', 'updated' ); ?>"
-	  datetime="<?php $entity->the_iso8601_date(); ?>"><?php $entity->the_datetime(); ?></time><?php
+<time class="entry-date published <?php $item->the_not( 'is_modified', 'updated' ); ?>"
+	  datetime="<?php $item->the_iso8601_date(); ?>"><?php $item->the_datetime(); ?></time><?php
 
-if ( $entity->is_modified() ) :
+if ( $item->is_modified() ) :
 
-	?><time class="updated" datetime="<?php $entity->the_iso8601_date(); ?>"><?php $entity->the_datetime(); ?></time><?php
+	?><time class="updated" datetime="<?php $item->the_iso8601_date(); ?>"><?php $item->the_datetime(); ?></time><?php
 
 endif;
 

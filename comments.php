@@ -9,41 +9,41 @@
  *
  *
  */
-$entity = WPLib::theme()->entity();
+$item = WPLib::theme()->item();
 
-if ( $entity->user_can_see_comments() ) :
+if ( $item->user_can_see_comments() ) :
 
 
 	echo '<div id="comments" class="comments-area">';
 
-	if ( $entity->has_comments() ) :
+	if ( $item->has_comments() ) :
 
 		echo '<h2 class="comments-title">';
 
 			$message = esc_html( _nx(
 				'One thought on &ldquo;%2$s&rdquo;',   // Single
 				'%1$s thoughts on &ldquo;%2$s&rdquo;', // Plural
-				$entity->number_of_comments(),         // # comments
+				$item->number_of_comments(),         // # comments
 				'comments title',                      // Context
 				'underscores4wplib'                    // Domain
 			));
-			printf( $message, $entity->get_number_of_comments_html(), "<span>{$entity->title}</span>" );
+			printf( $message, $item->get_number_of_comments_html(), "<span>{$item->title}</span>" );
 
 		echo '</h2>';
 
-		$entity->the_template( 'post-comment-links', 'location=above' );
+		$item->the_template( 'post-comment-links', 'location=above' );
 
 		echo '<ol class="comment-list">';
 
-			$entity->the_comment_list_html( 'style=ol&short_ping=1' );
+			$item->the_comment_list_html( 'style=ol&short_ping=1' );
 
 		echo '</ol>';
 
-		$entity->the_template( 'post-comment-links', 'location=below' );
+		$item->the_template( 'post-comment-links', 'location=below' );
 
 	endif;
 
-	if ( $entity->comments_unavailable() ) :
+	if ( $item->comments_unavailable() ) :
 
 		echo '<p class="no-comments">';
 		esc_html_e( 'Comments are closed.', 'underscores4wplib' );
@@ -51,7 +51,7 @@ if ( $entity->user_can_see_comments() ) :
 
 	endif;
 
-	$entity->the_comment_form_html();
+	$item->the_comment_form_html();
 
 	echo '</div>';
 

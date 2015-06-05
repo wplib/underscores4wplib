@@ -2,9 +2,9 @@
 /**
  * @package underscores4wplib
  *
- * @var WPLib_Post_Base $entity
+ * @var WPLib_Post_Base $item
  */
-if ( $entity->number_of_comment_pages() > 1 ) :
+if ( $item->number_of_comment_pages() > 1 ) :
 ?>
 	<nav id="comment-nav-<?php echo $location; ?>" class="navigation comment-navigation" role="navigation">
 		<h2 class="screen-reader-text">
@@ -13,8 +13,8 @@ if ( $entity->number_of_comment_pages() > 1 ) :
 		<div class="nav-links">
 			<?php
 
-			$entity->the_previous_comments_link();
-			$entity->the_next_comments_link();
+			$item->the_previous_comments_link();
+			$item->the_next_comments_link();
 
 			?>
 		</div>

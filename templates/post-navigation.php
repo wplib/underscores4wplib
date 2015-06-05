@@ -1,6 +1,6 @@
 <?php
 /**
- * @var WPLib_Post $entity
+ * @var WPLib_Post $item
  */
 ?>
 <nav class="navigation post-navigation" role="navigation">
@@ -8,9 +8,9 @@
 	<div class="nav-links">
 		<?php
 
-			$entity->the_previous_post_link();
+			$item->the_previous_post_link();
 
-			$entity->the_next_post_link();
+			$item->the_next_post_link();
 
 		?>
 	</div><!-- .nav-links -->
