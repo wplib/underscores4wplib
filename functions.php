@@ -4,7 +4,8 @@
  *
  * @package underscores4wplib
  */
-
+require( __DIR__ . '/wplib-app/underscores4wplib.php' );
+Underscores::initialize();
 require( __DIR__ . '/theme.php' );
 
 

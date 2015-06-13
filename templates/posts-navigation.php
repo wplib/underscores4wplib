@@ -1,6 +1,8 @@
 <?php
 /**
- * @var Underscores $theme
+ * @package underscores4wplib
+ *
+ * @var Underscores_Theme $theme
  */
 if ( 1 < $theme->post_count() ) :
 	?>

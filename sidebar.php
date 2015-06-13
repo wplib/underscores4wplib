@@ -4,7 +4,7 @@
  *
  * @package underscores4wplib
  *
- * @var Underscores $theme
+ * @var Underscores_Theme $theme
  */
 
 if ( $theme->is_sidebar_active( 'sidebar-1' ) ) :

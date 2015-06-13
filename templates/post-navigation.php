@@ -1,5 +1,7 @@
 <?php
 /**
+ * @package underscores4wplib
+ *
  * @var WPLib_Post $item
  */
 ?>

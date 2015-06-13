@@ -1,18 +1,11 @@
 <?php
-
 /**
- * Class Underscores
+ * @package underscores4wplib
  *
- *
- * @static self static instance()
+ * Class Underscores_Theme
  *
  */
-class Underscores extends WPLib_Theme_Base {
+class Underscores_Theme extends WPLib_Theme_Base {
 
-	static function on_load() {
-
-
-	}
 
 }
-Underscores::on_load();

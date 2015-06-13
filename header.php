@@ -6,7 +6,7 @@
  *
  * @package underscores4wplib
  *
- * @var LawPress $theme
+ * @var Underscores_Theme $theme
  */
 ?><!DOCTYPE html>
 <html <?php $theme->the_html_attributes(); ?>>

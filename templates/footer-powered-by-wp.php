@@ -4,7 +4,7 @@
 
  * @package underscores4wplib
  *
- * @var Underscores $theme
+ * @var Underscores_Theme $theme
  */
 
-$theme->the_link( 'http://wordpress.org', sprintf( __( 'Proudly powered by %s', 'underscores4wplib' ), 'WordPress' ) );
+WPLib::the_link( 'http://wordpress.org', sprintf( __( 'Proudly powered by %s', 'underscores4wplib' ), 'WordPress' ) );

@@ -6,7 +6,7 @@
  *
  * @package underscores4wplib
  *
- * @var Underscores $theme
+ * @var Underscores_Theme $theme
  */
 $theme->the_header_html(); ?>
 
