@@ -10,11 +10,13 @@
  * @package underscores4wplib
  *
  * @var Underscores_Theme $theme
+ * @var WPLib_Page $page
  */
 
 $theme->the_header_html(); ?>
 
-<div id="primary" class="content-area">
+	<div id="primary" class="content-area">
+
 	<main id="main" class="site-main" role="main">
 		<?php
 
