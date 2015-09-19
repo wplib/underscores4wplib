@@ -24,13 +24,17 @@ $theme->the_header_html(); ?>
 
 		else :
 
-			foreach( $theme->get_post_list() as $entry ) :
+			foreach( $theme->get_post_list() as $post_item ) :
+
+				$post_item->the_template( 'sharing' );
 
 				/* Include the Post-Format-specific template for the content.
 				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
+				 * called content-___.php (where ___ is the Post Format name) and that
+				 * will be used instead.
 				 */
-				$entry->the_template( 'content', $entry->format_slug() );
+				$post_item->the_template( 'content', $post_item->format_slug() );
+
 
 			endforeach;
 
