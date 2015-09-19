@@ -6,7 +6,7 @@
  */
 require( __DIR__ . '/wplib-app/underscores4wplib.php' );
 Underscores::initialize();
-require( __DIR__ . '/theme.php' );
+require( __DIR__ . '/wplib-theme.php' );
 
 
 if ( ! function_exists( 'wplib_setup' ) ) :
