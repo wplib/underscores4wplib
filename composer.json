@@ -1,0 +1,13 @@
+{
+    "name": "wplib/underscores4wplib",
+    "description": "Port of the Underscores Theme for use with WPLib",
+    "type": "wordpress-theme",
+    "license": "GLPv2 or later",
+    "authors": [
+        {
+            "name": "NewClarity, LLC",
+            "email": "info@newclarity.net"
+        }
+    ],
+    "require": {}
+}
